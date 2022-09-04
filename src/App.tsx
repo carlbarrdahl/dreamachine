@@ -61,7 +61,7 @@ const maxFreq = frequencies[frequencies.length - 1].freq[1];
 
 function rainbow(n: number) {
   n = n * 255;
-  return "hsl(" + n + ",100%,50%)";
+  return "hsl(" + n + ",100%,90%)";
 }
 
 function App() {
@@ -85,7 +85,7 @@ function App() {
         style={{
           color: "#fff",
           background: "#000",
-          height: "100vh",
+          height: window.innerHeight,
           position: "relative",
         }}
         onClick={() => Tone.Transport.start()}

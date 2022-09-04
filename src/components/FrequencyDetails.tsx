@@ -13,7 +13,8 @@ const FrequencyDetails = memo(({ hz, frequency }: Props) => (
         opacity: 0.5,
       }}
     >
-      {frequency?.name} ({hz} Hz)
+      <h3>{frequency?.name} Waves</h3>
+      {hz.toFixed(2)} Hz
     </div>
     <div style={{ fontSize: 300, textAlign: "center", opacity: 0.1 }}>
       {frequency?.symbol}

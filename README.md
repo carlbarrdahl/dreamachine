@@ -5,6 +5,8 @@
 3. Configure frequency (delta, theta, alpha, beta) and color by tapping and dragging
 4. Dream!
 
+https://www.loom.com/share/04a0f80164124ba8a8b2303e923de9ae
+
 | Frequency band | Frequency | Brain states                                                                                                                                                     |
 | -------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Beta (β)       | 12–35 Hz  | CONCIOUS - Fully awake, alert, ordinary reality, functional in the 3rd dimension and middle world                                                                |

@@ -1,32 +1,27 @@
 import { memo, useEffect, useRef, useState } from "react";
-import { useHarmonicIntervalFn, useRaf, useSlider } from "react-use";
+import { useHarmonicIntervalFn, useSlider } from "react-use";
 import * as Tone from "tone";
 
 const frequencies = [
   {
     name: "Delta",
     symbol: "δ",
-    freq: [0, 3],
+    freq: [0, 4],
   },
   {
     name: "Theta",
     symbol: "θ",
-    freq: [3, 9],
+    freq: [4, 8],
   },
   {
     name: "Alpha",
     symbol: "α",
-    freq: [9, 13],
+    freq: [8, 12],
   },
   {
     name: "Beta",
     symbol: "β",
-    freq: [13, 30],
-  },
-  {
-    name: "Gamma",
-    symbol: "γ",
-    freq: [13, 30],
+    freq: [12, 30],
   },
 ];
 

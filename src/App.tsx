@@ -92,10 +92,17 @@ function App() {
       >
         <Strobe hz={hz} background={background} isRunning={isRunning} />
         <Binaural hz={hz} isRunning={isRunning} />
-        <div style={{ padding: 20, fontSize: 24, textAlign: "center" }}>
+        <div
+          style={{
+            padding: 20,
+            fontSize: 24,
+            textAlign: "center",
+            opacity: 0.5,
+          }}
+        >
           {wave?.name} ({hz} Hz)
         </div>
-        <div style={{ fontSize: 300, textAlign: "center", opacity: 0.6 }}>
+        <div style={{ fontSize: 300, textAlign: "center", opacity: 0.1 }}>
           {wave?.symbol}
         </div>
         <div

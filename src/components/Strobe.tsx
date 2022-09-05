@@ -8,7 +8,7 @@ const Strobe = memo(({ hz, background, isRunning }: Props) => {
 
   useHarmonicIntervalFn(() => {
     isRunning && setPulse((a) => !a);
-  }, hz);
+  }, 1000 / hz);
 
   const style: CSSProperties = useMemo(
     () => ({

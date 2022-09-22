@@ -1,12 +1,21 @@
 import { memo, useEffect, useState } from "react";
 import * as Tone from "tone";
 
-const baseHz = 100;
 const Binaural = memo(
-  ({ hz, isRunning }: { hz: number; isRunning: boolean }) => {
+  ({
+    baseHz,
+    hz,
+    vol = -24,
+    isRunning,
+  }: {
+    baseHz: number;
+    hz: number;
+    vol: number;
+    isRunning: boolean;
+  }) => {
     const [oscs] = useState(() => {
-      const panLeft = new Tone.PanVol(-1, -36).toDestination();
-      const panRight = new Tone.PanVol(1, -36).toDestination();
+      const panLeft = new Tone.PanVol(-1, vol).toDestination();
+      const panRight = new Tone.PanVol(1, vol).toDestination();
       return {
         left: new Tone.Oscillator(baseHz, "sine").connect(panLeft),
         right: new Tone.Oscillator(baseHz + hz, "sine").connect(panRight),

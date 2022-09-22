@@ -47,7 +47,7 @@ function App() {
   const hz = +(x.value * maxFreq).toFixed(1);
   const frequency = frequencies.find((f) => hz >= f.freq[0] && hz <= f.freq[1]);
   const background = rainbow(y.value);
-
+  const [strobeActive, toggleStrobe] = useState(false);
   return (
     <main style={{ overflow: "hidden" }}>
       <div
@@ -60,14 +60,26 @@ function App() {
         }}
         onClick={() => Tone.Transport.start()}
       >
-        <Strobe hz={hz} background={background} isRunning={isRunning} />
-        <Binaural hz={hz} isRunning={isRunning} />
+        {strobeActive && (
+          <Strobe hz={hz} background={background} isRunning={isRunning} />
+        )}
+        <Binaural vol={-24} baseHz={55} hz={hz} isRunning={isRunning} />
+        <Binaural vol={-24} baseHz={384} hz={hz} isRunning={isRunning} />
+        <Binaural vol={-36} baseHz={432} hz={hz} isRunning={isRunning} />
         <FrequencyDetails frequency={frequency} hz={hz} />
         <Marker x={x.value} y={y.value} isActive={x.isSliding}>
           {hz}
         </Marker>
       </div>
 
+      <div style={{ display: "flex", position: "absolute", top: 0 }}>
+        <button
+          style={{ padding: 16 }}
+          onClick={() => toggleStrobe(!strobeActive)}
+        >
+          Strobe ({strobeActive ? "on" : "off"})
+        </button>
+      </div>
       <StartButton onClick={start}>{isRunning ? "Stop" : "Start"}</StartButton>
     </main>
   );
